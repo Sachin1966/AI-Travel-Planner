@@ -520,6 +520,35 @@ fetch_recent_trips()
 with st.sidebar:
     st.markdown('<div class="sidebar-title outfit-font"><span class="gradient-text">EXPEDITION AI</span> 🧭</div>', unsafe_allow_html=True)
     
+    # Tech Stack Info Popover Popup
+    with st.popover("🛠️ View Tech Stack Info", use_container_width=True):
+        st.markdown("""
+        ### 🛠️ Tech Stack & Architecture
+        
+        **Frontend:**
+        - **Streamlit**: Single-page interactive user interface with glassmorphic styling, real-time Folium map rendering, and asynchronous chat updating.
+        
+        **Backend:**
+        - **FastAPI**: Clean REST API backend for handling client requests (itinerary generation, activity swap, chat history, PDF and calendar exports).
+        
+        **Database & ORM:**
+        - **SQLite**: Local SQL relational database for high-performance offline persistence.
+        - **SQLAlchemy**: Python SQL toolkit and Object Relational Mapper (ORM) for schema modeling.
+        
+        **Mapping & Routing:**
+        - **Folium & Leaflet**: For drawing interactive map layers and plotting coordinates.
+        - **Nominatim Geocoding API**: For destination coordinate queries.
+        - **OSRM API**: Street-level roadway routing between day-to-day tourist spots.
+        
+        **AI & Inference:**
+        - **Ollama (Local)**: Local LLM engine (e.g. Llama 3) for strict JSON itinerary generation.
+        - **Pollinations AI (Cloud)**: Resilient keyless cloud model fallback for the chat assistant.
+        
+        **Document Utilities:**
+        - **ReportLab**: Compilation of detailed PDF reports.
+        - **iCalendar**: Sync to digital calendar apps via `.ics` file generation.
+        """)
+    
     # Recent Trips History List
     if st.session_state.recent_trips:
         st.markdown("### 📂 Recent Plans")
