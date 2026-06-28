@@ -1,0 +1,13 @@
+# Database file
+travel_planner.db
+
+# Environment variables containing sensitive credentials
+.env
+
+# Python byte code and cache
+__pycache__/
+*.pyc
+
+# Local IDE folders
+.vscode/
+.idea/
