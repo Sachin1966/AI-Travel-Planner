@@ -522,32 +522,46 @@ with st.sidebar:
     
     # Tech Stack Info Popover Popup
     with st.popover("🛠️ View Tech Stack Info", use_container_width=True):
-        st.markdown("""
-        ### 🛠️ Tech Stack & Architecture
-        
-        **Frontend:**
-        - **Streamlit**: Single-page interactive user interface with glassmorphic styling, real-time Folium map rendering, and asynchronous chat updating.
-        
-        **Backend:**
-        - **FastAPI**: Clean REST API backend for handling client requests (itinerary generation, activity swap, chat history, PDF and calendar exports).
-        
-        **Database & ORM:**
-        - **SQLite**: Local SQL relational database for high-performance offline persistence.
-        - **SQLAlchemy**: Python SQL toolkit and Object Relational Mapper (ORM) for schema modeling.
-        
-        **Mapping & Routing:**
-        - **Folium & Leaflet**: For drawing interactive map layers and plotting coordinates.
-        - **Nominatim Geocoding API**: For destination coordinate queries.
-        - **OSRM API**: Street-level roadway routing between day-to-day tourist spots.
-        
-        **AI & Inference:**
-        - **Ollama (Local)**: Local LLM engine (e.g. Llama 3) for strict JSON itinerary generation.
-        - **Pollinations AI (Cloud)**: Resilient keyless cloud model fallback for the chat assistant.
-        
-        **Document Utilities:**
-        - **ReportLab**: Compilation of detailed PDF reports.
-        - **iCalendar**: Sync to digital calendar apps via `.ics` file generation.
-        """)
+        st.markdown(
+            """
+            <h3 style="margin-top:0; font-family:'Outfit', sans-serif; color:#f8fafc; font-size:18px;">🛠️ Tech Stack & Architecture</h3>
+            <p style="font-size:12px; color:#94a3b8; margin-top:-5px; margin-bottom:15px;">Expedition AI is powered by the following modern technologies:</p>
+            
+            <div style="font-family:'Outfit', sans-serif; margin-top:10px;">
+              <div style="font-weight:700; color:#cbd5e1; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">🖥️ Frontend</div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
+                <span style="background: linear-gradient(135deg, #FF4B4B 0%, #FF8F8F 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(255,75,75,0.25);">👑 Streamlit UI</span>
+              </div>
+              
+              <div style="font-weight:700; color:#cbd5e1; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">⚡ Backend & DB</div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
+                <span style="background: linear-gradient(135deg, #009688 0%, #33ab9f 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(0,150,136,0.25);">⚡ FastAPI</span>
+                <span style="background: linear-gradient(135deg, #003B57 0%, #0077B6 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(0,59,87,0.25);">💾 SQLite DB</span>
+                <span style="background: linear-gradient(135deg, #D7191C 0%, #FDAE61 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(215,25,28,0.25);">🛠️ SQLAlchemy</span>
+              </div>
+              
+              <div style="font-weight:700; color:#cbd5e1; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">📍 Maps & Routing</div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
+                <span style="background: linear-gradient(135deg, #78AB46 0%, #A2D149 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(120,171,70,0.25);">🗺️ Folium Map</span>
+                <span style="background: linear-gradient(135deg, #4F46E5 0%, #818CF8 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(79,70,229,0.25);">🚗 OSRM Routes</span>
+                <span style="background: linear-gradient(135deg, #06B6D4 0%, #67E8F9 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(6,182,212,0.25);">📍 Nominatim</span>
+              </div>
+              
+              <div style="font-weight:700; color:#cbd5e1; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">🧠 Artificial Intelligence</div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
+                <span style="background: linear-gradient(135deg, #2563EB 0%, #60A5FA 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(37,99,235,0.25);">🦙 Ollama Local</span>
+                <span style="background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(236,72,153,0.25);">🌸 Pollinations AI</span>
+              </div>
+              
+              <div style="font-weight:700; color:#cbd5e1; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">📄 Document Exporters</div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <span style="background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(245,158,11,0.25);">📄 ReportLab PDF</span>
+                <span style="background: linear-gradient(135deg, #10B981 0%, #34D399 100%); color:white; padding:5px 12px; border-radius:15px; font-size:11.5px; font-weight:bold; box-shadow:0 2px 8px rgba(16,185,129,0.25);">📅 iCalendar .ics</span>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
     
     # Recent Trips History List
     if st.session_state.recent_trips:
